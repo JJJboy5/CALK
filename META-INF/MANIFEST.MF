@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Microedition-Configuration: CLDC-1.0
+Microedition-Profile: MIDP-2.0
+MIDlet-1: Cat Game, , CatGame
+MIDlet-Name: Cat Food Game
+MIDlet-Vendor: JJJboy5
+MIDlet-Version: 1.0
