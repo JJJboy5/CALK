@@ -4,6 +4,7 @@
     <property name="build.dir" value="build"/>
     <property name="dist.dir" value="dist"/>
     <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="jar.file" value="${dist.dir}/CatGame.jar"/>
 
     <target name="init">
         <mkdir dir="${classes.dir}"/>
@@ -15,7 +16,18 @@
     </target>
 
     <target name="package" depends="compile">
-        <jar jarfile="${dist.dir}/CatGame.jar" basedir="${classes.dir}" includes="**/*.class"/>
+        <jar jarfile="${jar.file}" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Manifest-Version" value="1.0"/>
+                <attribute name="Microedition-Configuration" value="CLDC-1.0"/>
+                <attribute name="Microedition-Profile" value="MIDP-2.0"/>
+                <attribute name="MIDlet-1" value="Cat Game, , CatGame"/>
+                <attribute name="MIDlet-Name" value="Cat Food Game"/>
+                <attribute name="MIDlet-Vendor" value="JJJboy5"/>
+                <attribute name="MIDlet-Version" value="1.0"/>
+            </manifest>
+        </jar>
+        <echo message="JAR file created: ${jar.file}"/>
     </target>
 
     <target name="clean">
